@@ -1,10 +1,10 @@
 # httpGo<sup>Test</sup>
- **Learn Testing, without coding!!**
+ **Learn API Testing, without coding!!**
  
 Open source API testing and automation framework written in Go language. 
 
 ## Overview
-httpGo<sup>Test</sup> enables to write the REST API test cases and automate them with minimal effort. Even non-programmers can also write and manage the test cases wit ease. This framework is written completely in Go language and can be extensible other than HTTP as per use case. For running the tool no external dependencies are required which is super simple.
+httpGo<sup>Test</sup> enables to write the REST API test cases and automate them with minimal effort. Even non-programmers can also write and manage the test cases with ease. This framework is written completely in Go language and can be extensible other than HTTP as per use case. For running the tool no external dependencies are required which is super simple.
 
 
 ## Test Project Structure
