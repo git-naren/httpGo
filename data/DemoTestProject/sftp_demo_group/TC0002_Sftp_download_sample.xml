@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testcase name="TC0002_Sftp_download_sample" desc="Test case to show the sample SFTP remote file operation">
+	<teststep type="SFTP" desc="Step to download the log files via sftp">
+		<host>10.10.1.1</host>
+		<port>22</port>
+		<username>root</username>
+		<password>pass123</password>
+		<ftp type="download">
+			<source>/root/httpGo/config.ini</source>
+			<destination>./data/config.ini</destination>
+		</ftp>
+		<expect name="sftp.status" check="not contains" value="false">ftp download failed</expect>		
+	</teststep>
+</testcase>

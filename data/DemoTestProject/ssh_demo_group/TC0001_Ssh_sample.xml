@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testcase name="TC0001_Ssh_sample" desc="Test case to show the sample SSH remote command execution">
+	<teststep type="SSH" desc="Step to get the content of text file via ssh">
+		<host>10.10.1.1</host>
+		<port>22</port>
+		<username>root</username>
+		<password>pass123</password>
+		<command>/home/run.sh</command>
+		<expect name="ssh.status" check="not contains" value="false">remote command execution failed</expect>
+		<expect name="ssh.output" check="contains" value="successfully ran the script">Script execution failed</expect>
+	</teststep>
+</testcase>

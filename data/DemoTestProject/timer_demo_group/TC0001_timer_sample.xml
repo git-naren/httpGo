@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testcase name="TC0001_timer_sample" desc="Test case to show the sample SSH remote command execution">
+	<teststep type="TIMER" desc="Wait for content to record in the file" seconds="10">
+	</teststep>
+</testcase>

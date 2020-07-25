@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testcase name="TC0001_Multi_step_api_sample" desc="Test case to show the e2e user test creation and deletion">
+	<variable name="user.id">uid3456</variable>
+	<variable name="app.source">API</variable>
+	<!-- STEP:1 CREATE NEW USER -->
+	<teststep type="HTTP" desc="Create new user">		
+		<method>POST</method>
+		<url>http://localhost:9090/app/create/profile</url>	
+		<header name="source">${app.source}</header>
+		<header name="user-agent">httpGo Server v1.0.0</header>
+		<body>{"name": "test user"}</body>
+		<expect name="http.code" check="eq" value="200">api response status code is other than 200 OK</expect>
+		<expect name="user.id" check="not empty">user id is not created</expect>
+	</teststep>
+	<!-- STEP:2 WAIT FOR DATA TO SYNC -->
+	<teststep type="TIMER" desc="Wait for data to synch in db" seconds="10">
+	</teststep>
+	<!-- STEP:3 GET USER DETAILS -->
+	<teststep type="HTTP" desc="GET user details based on userId">		
+		<method>GET</method>
+		<url>http://localhost:9090/app/fetch/profile/${user.id}</url>	
+		<header name="source">${app.source}</header>
+		<header name="user-agent">httpGo Server v1.0.0</header>
+		<expect name="http.code" check="eq" value="200">api response status code is other than 200 OK</expect>		
+	</teststep>
+	<!-- STEP:4 DELETE THE TEST USER -->
+	<teststep type="HTTP" desc="Delete user" runalways="true">		 <!-- runalways flag wil enforce the step to be executed all the cases even some of steps failed-->
+		<method>DELETE</method>
+		<url>http://localhost:9090/app/remove/profile/${user.id}</url>	
+		<header name="source">${app.source}</header>
+		<header name="user-agent">httpGo Server v1.0.0</header>
+		<expect name="http.code" check="eq" value="204">api response status code is other than 200 OK</expect>	
+	</teststep>
+</testcase>

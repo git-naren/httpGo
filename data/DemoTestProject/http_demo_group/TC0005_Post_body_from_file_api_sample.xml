@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testcase name="TC0005_Post_body_from_file_api_sample" desc="Test case to show the sample GET http api test format">
+	<variable name="user.id">uid3456</variable>
+	<variable name="app.source">API</variable>
+	<teststep type="HTTP" desc="Create new user">		
+		<method>POST</method>
+		<url>http://localhost:9090/app/create/profile</url>	
+		<header name="source">${app.source}</header>
+		<header name="user-agent">httpGo Server v1.0.0</header>
+		<body>@file=post_body.json</body>	  <!-- If body starts with @file=, the body data will be replaced with the file content located in "content directory"-->
+		<expect name="http.code" check="eq" value="200">api response status code is other than 200 OK</expect>
+	</teststep>
+</testcase>

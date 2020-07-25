@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testcase name="TC0001_Sftp_upload_sample" desc="Test case to show the sample SFTP remote file operation">
+	<teststep type="SFTP" desc="upload sample file">
+		<host>10.10.1.1</host>
+		<port>22</port>
+		<username>root</username>
+		<password>pass123</password>
+		<ftp type="upload">
+			<source>./data/app.sh</source>
+			<destination>/root/httpGo/app.sh</destination>
+		</ftp>
+		<expect name="sftp.status" check="not contains" value="false">ftp upload failed</expect>		
+	</teststep>
+</testcase>

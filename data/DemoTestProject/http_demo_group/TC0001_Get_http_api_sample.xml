@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testcase name="TC0001_Get_api_sample" desc="Test case to show the sample GET http api test format">
+	<variable name="user.id">uid3456</variable>
+	<variable name="app.source">API</variable>
+	<teststep type="HTTP" desc="GET user details based on userId">		
+		<method>GET</method>
+		<url>http://localhost:9090/app/fetch/profile/${user.id}</url>	
+		<header name="source">${app.source}</header>
+		<header name="user-agent">httpGo Server v1.0.0</header>
+		<expect name="http.code" check="eq" value="200">api response status code is other than 200 OK</expect>		
+	</teststep>
+</testcase>

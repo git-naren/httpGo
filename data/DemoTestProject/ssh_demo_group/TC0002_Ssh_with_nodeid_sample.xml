@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testcase name="TC0002_Ssh_with_nodeid_sample" desc="Test case to show the sample SSH remote command execution">
+	<teststep type="SSH" desc="Step to get the content of text file via ssh">
+		<nodeid>app</nodeid>  <!-- this will refer envronmental host ssh details app.ssh.host...ect -->
+		<command>wc -l</command>
+		<expect name="ssh.status" check="not contains" value="false">remote command execution failed</expect>
+	</teststep>
+</testcase>

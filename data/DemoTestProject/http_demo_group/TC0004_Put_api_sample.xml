@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testcase name="TC0004_Put_api_sample" desc="Test case to show the sample PUT http api test format">
+	<variable name="user.id">uid3456</variable>
+	<variable name="app.source">API</variable>
+	<teststep type="HTTP" desc="Update user details step">		
+		<method>PUT</method>
+		<url>http://localhost:9090/app/update/profile</url>	
+		<header name="source">${app.source}</header>
+		<header name="user-agent">httpGo Server v1.0.0</header>
+		<body>{"id": "${user.id}", "name": "updated user"}</body>
+		<extract variable="api.res.status" from="http.body" type="json" value="//status">status parameter not found in the response body</extract>	
+		<expect name="http.code" check="eq" value="200">api response status code is other than 200 OK</expect>
+		<expect name="api.res.status" check="eq" value="error">api operation is not success and returned error response</expect>		
+	</teststep>
+</testcase>
