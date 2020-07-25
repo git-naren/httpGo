@@ -69,7 +69,8 @@ Expects are the validation that needs to be performed after executing the test s
 
 
 ## Installation and Usage
-No complex installation is needed for httpGo, you just need to extract the archive and start using it by executing **httpGo.exe** from command line
+No complex installation is needed for httpGo, you just need to extract the archive and start using it by executing **httpGo.exe** from command line.
+Package can be downloaded from [Release Link](https://github.com/git-naren/httpGo/releases/tag/v.1.0.0) OR build the matching OS binary from source code.
 
 ![N|Solid](https://github.com/git-naren/httpGo/blob/master/images/http_root_files.png)
 
