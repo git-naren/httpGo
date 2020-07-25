@@ -1,4 +1,6 @@
 # httpGo<sup>Test</sup>
+ **Learn Testing, without coding!!**
+ 
 Open source API testing and automation framework written in Go language. 
 
 ## Overview
@@ -11,7 +13,7 @@ In httpGo test case is nothing but a simple xml file, if you can understand xml 
 
 ![N|Solid](https://github.com/git-naren/httpGo/blob/master/images/test_project_structure.png)
 
-All the projects will be located in ~/data/project/ path of httoGo. Creating adding a new project is simply creating new folder in project path, follwed by group and testcase
+All the projects will be located in **~/data/** path of httoGo. Creating adding a new project is simply creating new folder in project path, follwed by group and testcase
 
 **Sample Test Case XML**  [TAG **&lt;testcase&gt;**]
 Following show the sample test case xml to fetch the user details via HTTP API with user name and validate the response status
@@ -31,7 +33,7 @@ Following show the sample test case xml to fetch the user details via HTTP API w
   </testcase>
 ```
   
-### Test Steps [TAG **&lt;teststep&gt;** Attributes *type, desc*]
+### Test Steps [TAG **&lt;teststep&gt;** Attributes *type, desc, runalways*]
 Test steps are the core functionality that has to be achieved by the test case. Currently httpGo supports the following test step types
 
   - **HTTP STEP** for achieving the http protocol based API transactions Ex:- Sending API request
@@ -39,7 +41,7 @@ Test steps are the core functionality that has to be achieved by the test case. 
   - **SFTP STEP** for processing the upload and download file operations between remote machines and httpGo server. Ex:- Downloading the log files
   - **TIMER STEP** to keep some delay between the test steps execution when needed. Ex:- after sending api request if acoount sync takes some time to reflect in main database
   
- TODO:About the detailed tags and supported options about each type of step please refer the usage document
+ About the detailed tags and supported options about each type of step please refer [DempTestProject Samples!](https://github.com/git-naren/httpGo/tree/master/data/DemoTestProject) 
 
 
 ### Variables [TAG **&lt;variable&gt;** Attribute *name*]
